@@ -6,7 +6,7 @@
 /*   By: panoma <panoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 12:00:45 by panoma            #+#    #+#             */
-/*   Updated: 2023/03/26 21:13:32 by panoma           ###   ########.fr       */
+/*   Updated: 2023/03/26 22:29:52 by panoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_putnbr(int n, int *len)
 	if (n < 0)
 	{
 		ft_putchar('-', len);
-		ubr *= -1;
+		nbr *= -1;
 	}
 	if (nbr < 10)
 		ft_putchar(nbr + '0', len);

@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
+/*   ft_putaddr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: panoma <panoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/26 12:18:33 by panoma            #+#    #+#             */
-/*   Updated: 2023/03/26 22:22:51 by panoma           ###   ########.fr       */
+/*   Created: 2023/03/26 12:17:59 by panoma            #+#    #+#             */
+/*   Updated: 2023/03/26 22:46:59 by panoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putnbr_base(unsigned int nbr, char ex, int *len)
+void	ft_putaddr_hex(unsigned long int nbr, char ex, int *len)
 {
-	unsigned int	n_base;
-	char			*base;
+	unsigned long int	n_base;
+	char				*base;
 
 	n_base = 16;
 	if (ex == 'x')
@@ -26,15 +26,16 @@ void	ft_putnbr_base(unsigned int nbr, char ex, int *len)
 		ft_putchar(base[nbr % n_base], len);
 	else
 	{
-		ft_putnbr_base(nbr / n_base, ex, len);
-		ft_putnbr_base(nbr % n_base, ex, len);
+		ft_putaddr_hex(nbr / n_base, ex, len);
+		ft_putaddr_hex(nbr % n_base, ex, len);
 	}
 }
-/* This algorithm is based on converting decimal (base 10) to hexadecimal
-(base 16)
 
-Divide the decimal number by 16.
-Write down the remainder (in hexadecimal notation)
-Divide the quotient (integer part of the division) again by 16,
-and repeat the process until the quotient becomes zero.
-Write the hexadecimal digits in reverse order to obtain the final result.*/
+void	ft_putaddr(void *addr, int *len)
+{
+	unsigned long int	ptr;
+
+	ptr = (unsigned long int)addr;
+	ft_putstr("0x", len);
+	ft_putaddr_hex(ptr, 'x', len);
+}

@@ -6,11 +6,11 @@
 /*   By: panoma <panoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 11:56:16 by panoma            #+#    #+#             */
-/*   Updated: 2023/03/26 21:13:34 by panoma           ###   ########.fr       */
+/*   Updated: 2023/03/26 22:29:34 by panoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
 void	ft_putchar(char c, int *len)
 {
