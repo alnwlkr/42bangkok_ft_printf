@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: panoma <panoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/25 11:47:50 by panoma            #+#    #+#             */
-/*   Updated: 2023/03/26 21:13:35 by panoma           ###   ########.fr       */
+/*   Created: 2023/03/26 12:00:45 by panoma            #+#    #+#             */
+/*   Updated: 2023/03/26 21:13:32 by panoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <unistd.h>
-# include <stdarg.h>
-# include <stdlib.h>
-# include <stdio.h>
+void	ft_putnbr(int n, int *len)
+{
+	unsigned int	nbr;
 
-int		ft_printf(const char *format, ...);
-void	ft_putchar(char c, int *len);
-void	ft_putnbr(int n, int *len);
-void	ft_putnbr_u(unsigned int n, int *len);
-void	ft_putnbr_base(unsigned int nbr, char Xx, int *len);
-void	ft_putaddr(void *addr, int *len);
-
-#endif
+	nbr = n;
+	if (n < 0)
+	{
+		ft_putchar('-', len);
+		ubr *= -1;
+	}
+	if (nbr < 10)
+		ft_putchar(nbr + '0', len);
+	else
+	{
+		ft_putnbr(nbr / 10, len);
+		ft_putnbr(nbr % 10, len);
+	}
+}
