@@ -6,7 +6,7 @@
 /*   By: panoma <panoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 11:47:50 by panoma            #+#    #+#             */
-/*   Updated: 2023/03/26 22:31:29 by panoma           ###   ########.fr       */
+/*   Updated: 2023/03/26 23:39:14 by panoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include <unistd.h>
 # include <stdarg.h>
 # include <stdlib.h>
-# include <stdio.h>
 
 int		ft_printf(const char *format, ...);
 void	ft_putchar(char c, int *len);
